@@ -10,41 +10,70 @@ namespace GeometryCalculator
     {
         static void Main(string[] args)
         {
+            
+            Menu();
+            Console.ReadKey(true);
+        }
+        
+        static void Menu()
+        {
+            
             Console.WriteLine("Choose option (triangle, square or radians): ");
+            Console.WriteLine("Your option: ");
             string option = Console.ReadLine();
             switch (option)
             {
-                case "triangle":
-                    Console.WriteLine("Enter side: ");
-                    double a = double.Parse(Console.ReadLine());
-                    Console.WriteLine("Enter height: ");
-                    double h = double.Parse(Console.ReadLine());
-                    double S = (a * h) / 2;
-                    Console.WriteLine("The area of the triangle is {0:F2} ", S);
-                    break;
-                case "square":
-                    Console.WriteLine("Enter side: ");
-                    double b = double.Parse(Console.ReadLine());
-                    double S2 = Math.Pow(b,2);
-                    Console.WriteLine("The area of the square is {0:F2}", S2);
-                    break;
-                case "radians":
-                    Console.WriteLine("Enter the degrees you want to transform in radians: ");
-                    double c = double.Parse(Console.ReadLine());
-                    double Rad = (Math.PI / 180) * c;
-                    Console.WriteLine("Your degrees in radians are = {0}", Rad);
-                    break;
-                default:
-                    Console.WriteLine("That's not an option");
-                    break;
+                case "triangle": Triangle(); break;
+                case "square": Square(); break;
+                case "radians": Radians(); break;
+                case "exit": Environment.Exit(0); break;
+                default: Console.WriteLine("That's not an option"); break;
             }
         }
+        static void Triangle()
+        {
+            Console.WriteLine("Enter side: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter height: ");
+            double h = double.Parse(Console.ReadLine());
+            double S = (a * h) / 2;
+            Console.WriteLine("The area of the triangle is {0:F2} ", S);
+            Menu();
+        }
+        static void Square()
+        {
+            Console.WriteLine("Enter side: ");
+            double a = double.Parse(Console.ReadLine());
+            double S = Math.Pow(a, 2);
+            Console.WriteLine("The area of the square is {0:F2}", S);
+            Menu();
+            
+            
+        }  
+         static void Radians()   
+         {    
+       
+            Console.WriteLine("Enter the degrees you want to transform in radians: ");
+            double b = double.Parse(Console.ReadLine());
+            double Rad = (Math.PI / 180) * b;
+            Console.WriteLine("Your degrees in radians are {0}", Rad);
+            Menu();
+         }
+     }
 
 
-    }
+}  
+            
+           
+            
+           
+            
+            
+            
+    
 
 
-}   
+
   
 
               
