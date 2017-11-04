@@ -9,25 +9,30 @@ namespace GeometryCalculator
     class Program
     {
         static void Main(string[] args)
-        {
-            
-            Menu();
-            Console.ReadKey(true);
-        }
-        
-        static void Menu()
-        {
+
+        { 
+       
             
             Console.WriteLine("Choose option (triangle, square or radians): ");
             Console.WriteLine("Your option: ");
             string option = Console.ReadLine();
             switch (option)
             {
-                case "triangle": Triangle(); break;
-                case "square": Square(); break;
-                case "radians": Radians(); break;
-                case "exit": Environment.Exit(0); break;
-                default: Console.WriteLine("That's not an option"); break;
+                case "triangle":
+                           Triangle();
+                           break;
+                case "square":       
+                         Square();
+                         break;
+                case "radians":
+                         Radians();
+                         break;
+                case "exit":
+                         Environment.Exit(0);
+                         break;
+                default:
+                    Console.WriteLine("That's not an option");
+                    break;
             }
         }
         static void Triangle()
@@ -38,7 +43,7 @@ namespace GeometryCalculator
             double h = double.Parse(Console.ReadLine());
             double S = (a * h) / 2;
             Console.WriteLine("The area of the triangle is {0:F2} ", S);
-            Menu();
+            
         }
         static void Square()
         {
@@ -46,7 +51,7 @@ namespace GeometryCalculator
             double a = double.Parse(Console.ReadLine());
             double S = Math.Pow(a, 2);
             Console.WriteLine("The area of the square is {0:F2}", S);
-            Menu();
+            
             
             
         }  
@@ -57,7 +62,7 @@ namespace GeometryCalculator
             double b = double.Parse(Console.ReadLine());
             double Rad = (Math.PI / 180) * b;
             Console.WriteLine("Your degrees in radians are {0}", Rad);
-            Menu();
+            
          }
      }
 
